@@ -1,4 +1,4 @@
-package tests
+package tests.serialization
 
 import ru.kazantsev.nsd.json_rpc_connector.ConditionalOperator
 

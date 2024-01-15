@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a064ab90-d33e-43e1-a932-e587ecc63e97" name="Changes" comment="" />
+    <list default="true" id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/ResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/create.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/createWuthParams.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/edit.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editWithParams.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/find.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/findWithParams.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/get.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/getWithParams.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Attrs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Attrs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/ConditionalOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/ConditionalOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Dto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Method.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Params.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Params.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/TestUtils.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/TestUtils.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/get.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/serialization/conditional_serialization.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/serialization/conditional_serialization.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/serialization/dto_serialization.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/serialization/dto_serialization.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/serialization/enum_serialization.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/serialization/enum_serialization.groovy" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,11 +44,45 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="json_rpc_connector" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="json_rpc_connector" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2al5uvv594Cde97Y2Zx8aEsjgVF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2alEwOMRLVPExpRX6B1DPHCEZTw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,21 +91,29 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a064ab90-d33e-43e1-a932-e587ecc63e97" name="Changes" comment="" />
-      <created>1704880550810</created>
+      <changelist id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="" />
+      <created>1704885003698</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1704880550810</updated>
-      <workItem from="1704880552371" duration="7000" />
+      <updated>1704885003698</updated>
+      <workItem from="1704885004925" duration="42504000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

@@ -1,2 +1,32 @@
-package ru.kazantsev.nsd.json_rpc_connector;public class QueryMap {
+package ru.kazantsev.nsd.json_rpc_connector;
+
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Date;
+import java.util.HashMap;
+
+public class Query {
+    @JsonValue
+    HashMap<String, Object> map = new HashMap<>();
+    public Query(){}
+    public Query put(String key, String value) {
+        map.put(key, value);
+        return this;
+    }
+    public Query put(String key, Number value) {
+        map.put(key, value);
+        return this;
+    }
+    public Query put(String key, Boolean value) {
+        map.put(key, value);
+        return this;
+    }
+    public Query put(String key, ConditionalOperator value) {
+        map.put(key, value);
+        return this;
+    }
+    public Query put(String key, Date value) {
+        map.put(key, value);
+        return this;
+    }
 }
