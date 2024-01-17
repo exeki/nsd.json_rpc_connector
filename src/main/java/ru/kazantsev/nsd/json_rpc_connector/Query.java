@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Date;
 import java.util.HashMap;
 
+/**
+ * Ассотиативный массив для поиска
+ */
 public class Query {
     @JsonValue
     HashMap<String, Object> map = new HashMap<>();
@@ -21,7 +24,7 @@ public class Query {
         map.put(key, value);
         return this;
     }
-    public Query put(String key, ConditionalOperator value) {
+    public Query put(String key, Condition value) {
         map.put(key, value);
         return this;
     }

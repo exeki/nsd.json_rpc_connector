@@ -1,7 +1,8 @@
 package tests.requests.create
 
 import ru.kazantsev.nsd.json_rpc_connector.Attrs
-import ru.kazantsev.nsd.json_rpc_connector.ResponseDto
+import ru.kazantsev.nsd.json_rpc_connector.RpcRequestDto
+import ru.kazantsev.nsd.json_rpc_connector.RpcResponseDto
 
 import static tests.TestUtils.*;
 
@@ -13,5 +14,7 @@ attrs.put("service", 'slmService$23495801')
 attrs.put("agreement", 'agreement$12435404')
 attrs.put("shortDescr", "Какая то тема")
 attrs.put("descriptionRTF", "бр<br>бр")
-ResponseDto.SingleValueResultWithParams result = connector.jsonRpcCreate('serviceCall$vnINC', attrs, ["UUID", "title"])
-logger.info(result.result.toString())
+RpcRequestDto.Create dto = new RpcRequestDto.Create('serviceCall$vnINC', attrs)
+dto.setView(["UUID", "title"])
+RpcResponseDto result = connector.sendRequest(dto)
+logger.info(objectMapper.writeValueAsString(result))

@@ -4,35 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/ResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/create.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/createWuthParams.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/edit.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editWithParams.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/find.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/findWithParams.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/get.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/getWithParams.groovy" afterDir="false" />
+    <list default="true" id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="сильно изменена структ">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcUtilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByMethod.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByQueryWithParams.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/multi/getFindCreate.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/serialization/map.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Attrs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Attrs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/ConditionalOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/ConditionalOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/ConditionalOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Condition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Dto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Method.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Params.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Params.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Method.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Params.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Utilities.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/TestUtils.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/TestUtils.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/get.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/create.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/create.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/createWuthParams.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/createWuthParams.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/edit.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/edit.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByQuery.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByQuery.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editWithParams.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editWithParams.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/find.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/find.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/findWithParams.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/findWithParams.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/get.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/get.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/getWithParams.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/getWithParams.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/serialization/conditional_serialization.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/serialization/conditional_serialization.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/serialization/dto_serialization.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/serialization/dto_serialization.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/serialization/enum_serialization.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/serialization/enum_serialization.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/serialization/enum_serialization.groovy" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +67,12 @@
                 <item name="json_rpc_connector" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="json_rpc_connector" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -78,6 +89,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2alEwOMRLVPExpRX6B1DPHCEZTw" />
   <component name="ProjectLevelVcsManager">
@@ -98,6 +112,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -109,11 +124,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704885003698</updated>
-      <workItem from="1704885004925" duration="42504000" />
+      <workItem from="1704885004925" duration="60483000" />
+      <workItem from="1705432335947" duration="461000" />
+      <workItem from="1705434000068" duration="182000" />
+      <workItem from="1705438234063" duration="25116000" />
     </task>
+    <task id="LOCAL-00001" summary="добавлены новые методы">
+      <option name="closed" value="true" />
+      <created>1705345221339</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705345221339</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="добавлены новые методы" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлены новые методы" />
   </component>
 </project>

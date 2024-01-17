@@ -1,9 +1,12 @@
 package tests.requests.get
 
 import ru.kazantsev.nsd.json_rpc_connector.Query
-import ru.kazantsev.nsd.json_rpc_connector.ResponseDto
+import ru.kazantsev.nsd.json_rpc_connector.RpcRequestDto
+import ru.kazantsev.nsd.json_rpc_connector.RpcResponseDto
 
-import static tests.TestUtils.*;
+import static tests.TestUtils.*
 
-ResponseDto.SingleValueResultWithParams result = connector.jsonRpcGet("employee", new Query().put("UUID", ut.eq('employee$12192601')), ["UUID", "title", "login"])
-logger.info(result.result.toString())
+RpcRequestDto.Get dto = new RpcRequestDto.Get("employee", new Query().put("UUID", ut.eq('employee$12192601')))
+dto.setView(["UUID", 'title', 'login'])
+RpcResponseDto result = connector.sendRequest(dto)
+logger.info(objectMapper.writeValueAsString(result))

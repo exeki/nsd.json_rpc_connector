@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Date;
 import java.util.HashMap;
 
+/**
+ * Ассотиативный массив для редактирования/создания
+ */
 public class Attrs {
     @JsonValue
     HashMap<String, Object> map = new HashMap<>();
