@@ -39,8 +39,16 @@ dependencies {
     testImplementation("ch.qos.logback:logback-classic:1.4.11")
 }
 
-tasks.test {
-    useJUnitPlatform()
+tasks {
+    test {
+        useJUnitPlatform()
+    }
+    compileJava {
+        options.encoding = "UTF-8"
+    }
+    javadoc {
+        options.encoding = "UTF-8"
+    }
 }
 
 tasks.compileJava {
