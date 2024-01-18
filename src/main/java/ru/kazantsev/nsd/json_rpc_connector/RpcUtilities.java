@@ -121,7 +121,7 @@ public class RpcUtilities {
      * @param args перечень аргуметов для сравнения
      * @return условный оператор in
      */
-    public Condition.In in(Number[] args) {
+    public Condition.In opIn(Number[] args) {
         return new Condition.In(args);
     }
 
@@ -131,7 +131,7 @@ public class RpcUtilities {
      * @param args перечень аргуметов для сравнения
      * @return условный оператор in
      */
-    public Condition.In in(String[] args) {
+    public Condition.In opIn(String[] args) {
         return new Condition.In(args);
     }
 
@@ -141,7 +141,7 @@ public class RpcUtilities {
      * @param args перечень аргуметов для сравнения
      * @return условный оператор in
      */
-    public Condition.In in(Date[] args) {
+    public Condition.In opIn(Date[] args) {
         return new Condition.In(args);
     }
 
@@ -151,7 +151,7 @@ public class RpcUtilities {
      * @param args перечень аргуметов для сравнения
      * @return условный оператор in
      */
-    public Condition.In in(Boolean[] args) {
+    public Condition.In opIn(Boolean[] args) {
         return new Condition.In(args);
     }
 

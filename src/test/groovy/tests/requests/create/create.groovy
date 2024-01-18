@@ -10,7 +10,7 @@ import ru.kazantsev.nsd.json_rpc_connector.RpcRequestDto
 import ru.kazantsev.nsd.json_rpc_connector.RpcResponseDto
 
 Logger logger = LoggerFactory.getLogger("CREATE TEST")
-
+new ConnectorParams()
 //Создается ассотиативный массив для редактирования,
 //содержий в ключах коды атрибутов,
 //в значениях значения атрибутов создаваемого объекта
