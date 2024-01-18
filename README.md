@@ -1,8 +1,8 @@
 # Общее описание:
 
-Данная библиотека используется для обращения к модулю [https://github.com/exeki/ru.itsm365.jsonRpc](jsonRpc) NSD.
+Данная библиотека используется для обращения к модулю [jsonRpc](https://github.com/exeki/ru.itsm365.jsonRpc) NSD.
 Предоставляет полный функционал модуля, который можно использовать разными способами. 
-Библиотека основа на библиотеке [https://github.com/exeki/nsd.basic_api_connector](nsd.basic_api_connector) и использует ее как зависимость.
+Библиотека основа на библиотеке [nsd.basic_api_connector](https://github.com/exeki/nsd.basic_api_connector) и использует ее как зависимость.
 
 # Как это работает:
 
