@@ -11,7 +11,7 @@ import ru.kazantsev.nsd.json_rpc_connector.RpcUtilities
 class TestUtils {
     static ObjectMapper objectMapper = new ObjectMapper().configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
     static Logger logger = LoggerFactory.getLogger(TestUtils)
-    static ConnectorParams params = ConnectorParams.byConfigFile("DSO_TEST")
+    static ConnectorParams params = ConnectorParams.byConfigFile("INT_SD_DEV")
     static Connector connector = new Connector(params)
     static RpcUtilities ut = RpcUtilities.getInstance()
 }

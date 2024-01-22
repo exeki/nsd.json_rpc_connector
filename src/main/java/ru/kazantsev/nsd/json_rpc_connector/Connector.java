@@ -7,6 +7,7 @@ import org.apache.http.util.EntityUtils;
 import ru.kazantsev.nsd.basic_api_connector.ConnectorParams;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,6 +33,7 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
     public Connector(ConnectorParams params) {
         super(params);
         this.objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+        this.objectMapper.setDateFormat(new SimpleDateFormat("yyyy.MM.dd HH:mm:ss"));
     }
 
     /**
