@@ -6,29 +6,51 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.util.EntityUtils;
 import ru.kazantsev.nsd.basic_api_connector.ConnectorParams;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonValue
+
+import java.text.SimpleDateFormat;
 
 @Field String MODULE_NAME = "nsdJsonRpcConnector"
 
 /**
- * Ассотиативный массив для редактирования/создания
- */
+ * Ассотиативный массив для редактирования/создания*/
 public class Attrs {
     @JsonValue
     HashMap<String, Object> map = new HashMap<>();
-    public Attrs(){}
+
+    public Attrs() {}
+
+    public Attrs(String key, String value) {
+        map.put(key, value);
+    }
+
+    public Attrs(String key, Number value) {
+        map.put(key, value);
+    }
+
+    public Attrs(String key, Boolean value) {
+        map.put(key, value);
+    }
+
+    public Attrs(String key, Date value) {
+        map.put(key, value);
+    }
+
     public Attrs put(String key, String value) {
         map.put(key, value);
         return this;
     }
+
     public Attrs put(String key, Number value) {
         map.put(key, value);
         return this;
     }
+
     public Attrs put(String key, Boolean value) {
         map.put(key, value);
         return this;
     }
+
     public Attrs put(String key, Date value) {
         map.put(key, value);
         return this;
@@ -37,10 +59,10 @@ public class Attrs {
 
 /**
  * Класс, содержащий в себе классы условных операторов,
- * используемиых в классе Query для запросов где используется поиск
- */
+ * используемиых в классе Query для запросов где используется поиск*/
 public abstract class Condition {
     Map<String, Object> value;
+
     @JsonValue
     Map<String, Object> getValue() {
         return value;
@@ -48,8 +70,7 @@ public abstract class Condition {
 
     /**
      * Поиск по вхождению в строке (тексте) значения атрибута, который соответствует поисковому шаблону. Для формирования поискового шаблона допустимо использование спецсимвола '%'.
-     * Ограничение: используется для атрибутов типа "Строка", "Текст", "Текст в формате RTF". Иначе генерируется исключение.
-     */
+     * Ограничение: используется для атрибутов типа "Строка", "Текст", "Текст в формате RTF". Иначе генерируется исключение.*/
     public static class Like extends Condition {
         public Like(String str) {
             this.value = Map.of("method", "like", "params", Map.of("args", List.of(str)));
@@ -57,134 +78,140 @@ public abstract class Condition {
     }
 
     /**
-     * Поиск объектов, значение целевого атрибута которых null или пустой список.
-     */
+     * Поиск объектов, значение целевого атрибута которых null или пустой список.*/
     public static class IsNull extends Condition {
-        public IsNull(){
+        public IsNull() {
             this.value = Map.of("method", "isNull");
         }
     }
 
     /**
-     * Поиск объектов, значение целевого атрибута которых не null или не пустой список.
-     */
+     * Поиск объектов, значение целевого атрибута которых не null или не пустой список.*/
     public static class IsNotNull extends Condition {
-        public IsNotNull(){
+        public IsNotNull() {
             this.value = Map.of("method", "isNotNull");
         }
     }
 
     /**
      * Поиск объектов, значение целевого атрибута которых совпадает хотя бы с одним из значений из списке параметров.
-     * Ограничение: минимальное количество параметров: 2, иначе генерируется исключение.
-     */
+     * Ограничение: минимальное количество параметров: 2, иначе генерируется исключение.*/
     public static class OrEq extends Condition {
-        public OrEq(String[] args){
-            this.value =  Map.of("method", "orEq", "params", Map.of("args", args));
+        public OrEq(String[] args) {
+            this.value = Map.of("method", "orEq", "params", Map.of("args", args));
         }
-        public OrEq(Number[] args){
-            this.value =  Map.of("method", "orEq", "params", Map.of("args", args));
+
+        public OrEq(Number[] args) {
+            this.value = Map.of("method", "orEq", "params", Map.of("args", args));
         }
-        public OrEq(Boolean[] args){
-            this.value =  Map.of("method", "orEq", "params", Map.of("args", args));
+
+        public OrEq(Boolean[] args) {
+            this.value = Map.of("method", "orEq", "params", Map.of("args", args));
         }
-        public OrEq(Date[] args){
-            this.value =  Map.of("method", "orEq", "params", Map.of("args", args));
+
+        public OrEq(Date[] args) {
+            this.value = Map.of("method", "orEq", "params", Map.of("args", args));
         }
     }
 
     /**
-     * Поиск объектов, значение целевого атрибута которых не совпадает ни с одним из значений из списка параметров. Допустимо использование с одним параметром и с несколькими параметрами.
-     */
+     * Поиск объектов, значение целевого атрибута которых не совпадает ни с одним из значений из списка параметров. Допустимо использование с одним параметром и с несколькими параметрами.*/
     public static class Not extends Condition {
-        public Not(String[] args){
-            this.value =  Map.of("method", "not", "params", Map.of("args", args));
+        public Not(String[] args) {
+            this.value = Map.of("method", "not", "params", Map.of("args", args));
         }
-        public Not(Number[] args){
-            this.value =  Map.of("method", "not", "params", Map.of("args", args));
+
+        public Not(Number[] args) {
+            this.value = Map.of("method", "not", "params", Map.of("args", args));
         }
-        public Not(Boolean[] args){
-            this.value =  Map.of("method", "not", "params", Map.of("args", args));
+
+        public Not(Boolean[] args) {
+            this.value = Map.of("method", "not", "params", Map.of("args", args));
         }
-        public Not(Date[] args){
-            this.value =  Map.of("method", "not", "params", Map.of("args", args));
+
+        public Not(Date[] args) {
+            this.value = Map.of("method", "not", "params", Map.of("args", args));
         }
     }
 
     /**
-     * Поиск объектов, значение целевого атрибута которых совпадает со значением параметра.
-     */
+     * Поиск объектов, значение целевого атрибута которых совпадает со значением параметра.*/
     public static class Eq extends Condition {
-        public Eq(Number arg){
-            this.value =  Map.of("method", "eq", "params", Map.of("args", List.of(arg)));
+        public Eq(Number arg) {
+            this.value = Map.of("method", "eq", "params", Map.of("args", List.of(arg)));
         }
-        public Eq(String arg){
-            this.value =  Map.of("method", "eq", "params", Map.of("args", List.of(arg)));
+
+        public Eq(String arg) {
+            this.value = Map.of("method", "eq", "params", Map.of("args", List.of(arg)));
         }
-        public Eq(Boolean arg){
-            this.value =  Map.of("method", "eq", "params", Map.of("args", List.of(arg)));
+
+        public Eq(Boolean arg) {
+            this.value = Map.of("method", "eq", "params", Map.of("args", List.of(arg)));
         }
-        public Eq(Date arg){
-            this.value =  Map.of("method", "eq", "params", Map.of("args", List.of(arg)));
+
+        public Eq(Date arg) {
+            this.value = Map.of("method", "eq", "params", Map.of("args", List.of(arg)));
         }
     }
 
     /**
      * Поиск объектов, значение целевого атрибута которых содержится в списке параметров.
      * Ограничение: при передаче в op.in на Oracle более 1000 объектов, а на MS SQL более 2100 будет
-     * выведено сообщение об ошибке, так как в указанных базах есть ограничение на количество параметров при использовании условия вхождения значений в список.
-     */
+     * выведено сообщение об ошибке, так как в указанных базах есть ограничение на количество параметров при использовании условия вхождения значений в список.*/
     public static class In extends Condition {
-        public In(String[] args){
-            this.value =  Map.of("method", "in", "params", Map.of("args", args));
+        public In(String[] args) {
+            this.value = Map.of("method", "in", "params", Map.of("args", args));
         }
-        public In(Number[] args){
-            this.value =  Map.of("method", "in", "params", Map.of("args", args));
+
+        public In(Number[] args) {
+            this.value = Map.of("method", "in", "params", Map.of("args", args));
         }
-        public In(Boolean[] args){
-            this.value =  Map.of("method", "in", "params", Map.of("args", args));
+
+        public In(Boolean[] args) {
+            this.value = Map.of("method", "in", "params", Map.of("args", args));
         }
-        public In(Date[] args){
-            this.value =  Map.of("method", "in", "params", Map.of("args", args));
+
+        public In(Date[] args) {
+            this.value = Map.of("method", "in", "params", Map.of("args", args));
         }
     }
 
     /**
      * Поиск объектов, значение целевого атрибута которых находится в рамках между value1 и value2, включая граничные значения.
-     * Ограничение: используется для атрибутов типа "Дата", "Дата/время" и числовых атрибутов, иначе генерируется исключение.
-     */
+     * Ограничение: используется для атрибутов типа "Дата", "Дата/время" и числовых атрибутов, иначе генерируется исключение.*/
     public static class Between extends Condition {
-        public Between(Date arg1, Date arg2){
-            this.value =  Map.of("method", "between", "params", Map.of("args", List.of(arg1, arg2)));
+        public Between(Date arg1, Date arg2) {
+            this.value = Map.of("method", "between", "params", Map.of("args", List.of(arg1, arg2)));
         }
-        public Between(Number arg1, Number arg2){
-            this.value =  Map.of("method", "between", "params", Map.of("args", List.of(arg1, arg2)));
+
+        public Between(Number arg1, Number arg2) {
+            this.value = Map.of("method", "between", "params", Map.of("args", List.of(arg1, arg2)));
         }
     }
 
     /**
      * Поиск объектов, значение целевого атрибута которых больше значения указанного параметра:
-     * Ограничение: используется для атрибутов типа "Дата", "Дата/время" и числовых атрибутов, иначе генерируется исключение.
-     */
+     * Ограничение: используется для атрибутов типа "Дата", "Дата/время" и числовых атрибутов, иначе генерируется исключение.*/
     public static class Gt extends Condition {
-        public Gt(Number arg){
-            this.value =  Map.of("method", "gt", "params", Map.of("args", List.of(arg)));
+        public Gt(Number arg) {
+            this.value = Map.of("method", "gt", "params", Map.of("args", List.of(arg)));
         }
-        public Gt(Date arg){
-            this.value =  Map.of("method", "gt", "params", Map.of("args", List.of(arg)));
+
+        public Gt(Date arg) {
+            this.value = Map.of("method", "gt", "params", Map.of("args", List.of(arg)));
         }
     }
 
     /**
      * Поиск объектов, значение целевого атрибута которых меньше значения указанного параметра.
-     * Ограничение: используется для атрибутов типа "Дата", "Дата/время" и числовых атрибутов, иначе генерируется исключение.
-     */
+     * Ограничение: используется для атрибутов типа "Дата", "Дата/время" и числовых атрибутов, иначе генерируется исключение.*/
     public static class Lt extends Condition {
-        public Lt(Number arg){
-            this.value =  Map.of("method", "lt", "params", Map.of("args", List.of(arg)));
+        public Lt(Number arg) {
+            this.value = Map.of("method", "lt", "params", Map.of("args", List.of(arg)));
         }
-        public Lt(Date arg){
-            this.value =  Map.of("method", "lt", "params", Map.of("args", List.of(arg)));
+
+        public Lt(Date arg) {
+            this.value = Map.of("method", "lt", "params", Map.of("args", List.of(arg)));
         }
     }
 }
@@ -192,15 +219,13 @@ public abstract class Condition {
 /**
  * Коннектор, содержащий в себе методы для обращения к
  * модулю jsonRpc, а так же к стандартным методам системы
- */
+ * */
 public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
     /**
-     * Значение параметрам params в url запроса
-     */
+     * Значение параметрам params в url запроса*/
     protected final String URL_PARAMS_CONST = "request,response,user";
     /**
-     * Значение параметры func в url запроса
-     */
+     * Значение параметры func в url запроса*/
     protected final String URL_FUNC_CONST = "modules.jsonRpc.process";
 
     /**
@@ -211,6 +236,7 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
     public Connector(ConnectorParams params) {
         super(params);
         this.objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+        this.objectMapper.setDateFormat(new SimpleDateFormat("yyyy.MM.dd HH:mm:ss"));
     }
 
     /**
@@ -264,7 +290,7 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
      * либо в ключе error будет описание произошедшей ошибки.
      * ВАЖНО: случится ошибка, если по переданному query было найдено несколько объектов.
      */
-    public RpcResponseDto jsonRpcGet(String fqn, Query query, List<String> view, Long id){
+    public RpcResponseDto jsonRpcGet(String fqn, Query query, List<String> view, Long id) {
         RpcRequestDto.Get dto = new RpcRequestDto.Get(fqn, query);
         dto.setId(id);
         dto.setView(view);
@@ -286,7 +312,7 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
      * либо null, если ничего не было найдено,
      * либо в ключе error будет описание произошедшей ошибки.
      */
-    public RpcResponseDto jsonRpcFind(String fqn, Query query, List<String> view, Long limit, Long offset, Long id){
+    public RpcResponseDto jsonRpcFind(String fqn, Query query, List<String> view, Long limit, Long offset, Long id) {
         RpcRequestDto.Find dto = new RpcRequestDto.Find(fqn, query);
         dto.setId(id);
         dto.setView(view);
@@ -325,7 +351,7 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
      * либо Map с полями отредактированного объекта, если объект был отредактирован и view был не null,
      * либо в ключе error будет описание произошедшей ошибки.
      */
-    public RpcResponseDto jsonRpcEdit(String uuid, Attrs attrs, List<String> view, Long id){
+    public RpcResponseDto jsonRpcEdit(String uuid, Attrs attrs, List<String> view, Long id) {
         RpcRequestDto.Edit dto = new RpcRequestDto.Edit(uuid, attrs);
         dto.setId(id);
         dto.setView(view);
@@ -356,28 +382,53 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
 }
 
 /**
- * Ассотиативный массив для поиска
- */
+ * Ассотиативный массив для поиска*/
 public class Query {
     @JsonValue
     HashMap<String, Object> map = new HashMap<>();
-    public Query(){}
+
+    public Query() {}
+
+    public Query(String key, String value) {
+        map.put(key, value);
+    }
+
+    public Query(String key, Number value) {
+        map.put(key, value);
+    }
+
+    public Query(String key, Boolean value) {
+        map.put(key, value);
+    }
+
+    public Query(String key, Condition value) {
+        map.put(key, value);
+    }
+
+    public Query(String key, Date value) {
+        map.put(key, value);
+    }
+
     public Query put(String key, String value) {
         map.put(key, value);
         return this;
     }
+
     public Query put(String key, Number value) {
         map.put(key, value);
         return this;
     }
+
     public Query put(String key, Boolean value) {
         map.put(key, value);
         return this;
     }
+
     public Query put(String key, Condition value) {
         map.put(key, value);
         return this;
     }
+
     public Query put(String key, Date value) {
         map.put(key, value);
         return this;
@@ -386,14 +437,12 @@ public class Query {
 
 /**
  * Создержит в себе классы, которые испольщуются в качестве DTO
- * для body запроса при обращении к модулю json rpc.
- */
+ * для body запроса при обращении к модулю json rpc.*/
 @SuppressWarnings("unused")
 public abstract class RpcRequestDto {
 
     /**
-     * Абстракция, содержит повторяющиеся поля/методы
-     */
+     * Абстракция, содержит повторяющиеся поля/методы*/
     protected static abstract class Abstract {
         protected static final String JSON_RPC_VERSION_CONST = "2.0";
         protected String jsonRpcVersion;
@@ -449,16 +498,13 @@ public abstract class RpcRequestDto {
     }
 
     /**
-     * DTO для выполнения запроса методом get
-     */
+     * DTO для выполнения запроса методом get*/
     public static class Get extends Abstract {
         /**
-         * Код метокласса искомого объекта
-         */
+         * Код метокласса искомого объекта*/
         String fqn;
         /**
-         * Ассоциативный массив для поиска объекта
-         */
+         * Ассоциативный массив для поиска объекта*/
         Query query;
 
         /**
@@ -506,16 +552,13 @@ public abstract class RpcRequestDto {
     }
 
     /**
-     * DTO для выполнения запроса методом find
-     */
+     * DTO для выполнения запроса методом find*/
     public static class Find extends Get {
         /**
-         * Лимит возвращаемых объектов
-         */
+         * Лимит возвращаемых объектов*/
         Long limit;
         /**
-         * Оффсет при поиске объектов
-         */
+         * Оффсет при поиске объектов*/
         Long offset;
 
         /**
@@ -580,16 +623,13 @@ public abstract class RpcRequestDto {
     }
 
     /**
-     * DTO для выполнения запроса методом create
-     */
+     * DTO для выполнения запроса методом create*/
     public static class Create extends Abstract {
         /**
-         * Код метакласса создаваемого объекта
-         */
+         * Код метакласса создаваемого объекта*/
         String fqn;
         /**
-         * Ассоциативный массив с атрибутами создаваемого объекта
-         */
+         * Ассоциативный массив с атрибутами создаваемого объекта*/
         Attrs attrs;
 
         /**
@@ -637,24 +677,19 @@ public abstract class RpcRequestDto {
     }
 
     /**
-     * DTO для выполнения запроса методом edit
-     */
+     * DTO для выполнения запроса методом edit*/
     public static class Edit extends Abstract {
         /**
-         * Код метокласса искомого для редактирования объекта
-         */
+         * Код метокласса искомого для редактирования объекта*/
         protected String fqn;
         /**
-         * Ассоциативный массив содержащий параметры поиска редактируемого объекта
-         */
+         * Ассоциативный массив содержащий параметры поиска редактируемого объекта*/
         protected Query query;
         /**
-         * Идентификатор редактируемого объекта
-         */
+         * Идентификатор редактируемого объекта*/
         protected String uuid;
         /**
-         * Ассоциативный массив содержащий параметры для редактирования
-         */
+         * Ассоциативный массив содержащий параметры для редактирования*/
         protected Attrs attrs;
 
         /**
@@ -699,21 +734,18 @@ public abstract class RpcRequestDto {
     }
 }
 
+
 /**
- * DTO, возвращаемый в результате запроса
- */
+ * DTO, возвращаемый в результате запроса*/
 public class RpcResponseDto {
     /**
-     * Версия модуля json rpc
-     */
+     * Версия модуля json rpc*/
     public String jsonrpc;
     /**
-     * Идентификатор dto запроса
-     */
+     * Идентификатор dto запроса*/
     public Long id;
     /**
-     * Сообщение об ошибке, будет null если запрос успешно выполнен
-     */
+     * Сообщение об ошибке, будет null если запрос успешно выполнен*/
     public Error error;
     /**
      * Резулльтат выполнения запроса
@@ -722,34 +754,28 @@ public class RpcResponseDto {
      * массив строк, если запрос был выполнен методом find и view не был передан,
      * Map, если запрос был выполнен одним из методом: get, edit, create и view был передан,
      * массив Map, если запрос был выполнен методом find и view был передан,
-     * null, если искомые объекты не были найден или произошла ошибка
-     */
+     * null, если искомые объекты не были найден или произошла ошибка*/
     public Object result;
 
     /**
-     * Структура сообщения об ошибке
-     */
-    public static class Error{
+     * Структура сообщения об ошибке*/
+    public static class Error {
         /**
-         * Код ошибки
-         */
+         * Код ошибки*/
         public Integer code;
         /**
-         * Системное сообщение об ошибке
-         */
+         * Системное сообщение об ошибке*/
         public String message;
     }
 }
 
 /**
- * Утилитарый класс, содерщий набор статичесих методов для упрощения использования
- */
+ * Утилитарый класс, содерщий набор статичесих методов для упрощения использования*/
 @SuppressWarnings("unused")
 public class RpcUtilities {
 
     /**
-     * Заранее созданный экземпляр, что бы можно было поместить его в удобно названную переменную
-     */
+     * Заранее созданный экземпляр, что бы можно было поместить его в удобно названную переменную*/
     private static final RpcUtilities INSTANCE = new RpcUtilities();
 
     /**
@@ -761,8 +787,7 @@ public class RpcUtilities {
         return INSTANCE;
     }
 
-    RpcUtilities() {
-    }
+    RpcUtilities() {}
 
     /**
      * Создать условный оператор like
@@ -880,7 +905,7 @@ public class RpcUtilities {
      * @param args перечень аргуметов для сравнения
      * @return условный оператор in
      */
-    public  Condition.In opIn(Date[] args) {
+    public Condition.In opIn(Date[] args) {
         return new Condition.In(args);
     }
 
@@ -1017,7 +1042,7 @@ public class RpcUtilities {
     /**
      * Создать dto для отправки запроса методом get
      *
-     * @param fqn   код метокласса искомого объекта
+     * @param fqn код метокласса искомого объекта
      * @param query ассоциативный массив для поиска объекта
      * @return dto для отправки запроса методом get
      */
@@ -1028,7 +1053,7 @@ public class RpcUtilities {
     /**
      * Создать dto для отправки запроса методом find
      *
-     * @param fqn   код метокласса искомого объекта
+     * @param fqn код метокласса искомого объекта
      * @param query ассоциативный массив для поиска объекта
      * @return dto для отправки запроса методом find
      */
@@ -1039,7 +1064,7 @@ public class RpcUtilities {
     /**
      * Создать dto для отправки запроса методом create
      *
-     * @param fqn   код метакласса создаваемого объекта
+     * @param fqn код метакласса создаваемого объекта
      * @param attrs ассоциативный массив с атрибутами создаваемого объекта
      * @return dto для отправки запроса методом create
      */
@@ -1050,7 +1075,7 @@ public class RpcUtilities {
     /**
      * Создать dto для отправки запроса методом edit
      *
-     * @param uuid  идентификатор редактируемого объекта
+     * @param uuid идентификатор редактируемого объекта
      * @param attrs ассоциативный массив содержащий параметры для редактирования
      * @return dto для отправки запроса методом edit
      */
@@ -1061,7 +1086,7 @@ public class RpcUtilities {
     /**
      * Создать dto для отправки запроса методом edit
      *
-     * @param fqn   код метокласса искомого для редактирования объекта
+     * @param fqn код метокласса искомого для редактирования объекта
      * @param query ассоциативный массив содержащий параметры поиска редактируемого объекта
      * @param attrs ассоциативный массив содержащий параметры для редактирования
      * @return dto для отправки запроса методом edit
@@ -1079,6 +1104,22 @@ public class RpcUtilities {
         return new Attrs();
     }
 
+    public Attrs attrs(String key, String value) {
+        return new Attrs(key, value);
+    }
+
+    public Attrs attrs(String key, Number value) {
+        return new Attrs(key, value);
+    }
+
+    public Attrs attrs(String key, Boolean value) {
+        return new Attrs(key, value);
+    }
+
+    public Attrs attrs(String key, Date value) {
+        return new Attrs(key, value);
+    }
+
     /**
      * Создать новаый эжкземпляр query
      *
@@ -1087,4 +1128,25 @@ public class RpcUtilities {
     public Query query() {
         return new Query();
     }
+
+    public Query query(String key, String value) {
+        return new Query(key, value);
+    }
+
+    public Query query(String key, Number value) {
+        return new Query(key, value);
+    }
+
+    public Query query(String key, Boolean value) {
+        return new Query(key, value);
+    }
+
+    public Query query(String key, Condition value) {
+        return new Query(key, value);
+    }
+
+    public Query query(String key, Date value) {
+        return new Query(key, value);
+    }
+
 }

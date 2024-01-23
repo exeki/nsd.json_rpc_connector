@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/findIn.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/TestUtils.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/TestUtils.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/module.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +141,8 @@
       <workItem from="1705434000068" duration="182000" />
       <workItem from="1705438234063" duration="28209000" />
       <workItem from="1705574342382" duration="3925000" />
-      <workItem from="1705585571257" duration="6542000" />
+      <workItem from="1705585571257" duration="6585000" />
+      <workItem from="1706002484627" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="добавлены новые методы">
       <option name="closed" value="true" />
@@ -193,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705589688088</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="добавлены новые перегрузки для методов создания attrs и query">
+      <option name="closed" value="true" />
+      <created>1705919026164</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705919026164</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
