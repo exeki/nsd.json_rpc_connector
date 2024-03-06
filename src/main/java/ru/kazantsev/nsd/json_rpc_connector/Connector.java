@@ -45,7 +45,7 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
     public RpcResponseDto sendRequest(RpcRequestDto.Abstract requestDto) {
         try {
             String strRequestBody = objectMapper.writeValueAsString(requestDto);
-            logger.info(strRequestBody);
+            logDebug(strRequestBody);
             StringEntity entity = new StringEntity(strRequestBody, CHARSET);
             CloseableHttpResponse response = execPost(entity, URL_FUNC_CONST, URL_PARAMS_CONST, null);
             return objectMapper.readValue(EntityUtils.toString(response.getEntity()), RpcResponseDto.class);
@@ -63,7 +63,7 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
     public List<RpcResponseDto> sendRequest(List<RpcRequestDto.Abstract> requestDtos) {
         try {
             String strRequestBody = objectMapper.writeValueAsString(requestDtos);
-            logger.info(strRequestBody);
+            logDebug(strRequestBody);
             StringEntity entity = new StringEntity(strRequestBody, CHARSET);
             CloseableHttpResponse response = execPost(entity, URL_FUNC_CONST, URL_PARAMS_CONST, null);
             RpcResponseDto[] body = objectMapper.readValue(EntityUtils.toString(response.getEntity()), RpcResponseDto[].class);

@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +144,7 @@
       <workItem from="1706002484627" duration="2231000" />
       <workItem from="1709711903948" duration="1139000" />
       <workItem from="1709714329593" duration="884000" />
-      <workItem from="1709718001052" duration="2674000" />
+      <workItem from="1709718001052" duration="3344000" />
     </task>
     <task id="LOCAL-00001" summary="добавлены новые методы">
       <option name="closed" value="true" />
@@ -211,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706002914780</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="добавлены перегрузки с классе Connector">
+      <option name="closed" value="true" />
+      <created>1709720823913</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709720823913</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +243,7 @@
     <MESSAGE value="добавлен файл модуля" />
     <MESSAGE value="добавлены новые перегрузки для методов создания attrs и query" />
     <MESSAGE value="обновлен модуль" />
-    <option name="LAST_COMMIT_MESSAGE" value="обновлен модуль" />
+    <MESSAGE value="добавлены перегрузки с классе Connector" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлены перегрузки с классе Connector" />
   </component>
 </project>
