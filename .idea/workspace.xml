@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/module.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Attrs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Attrs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcUtilities.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +149,8 @@
       <workItem from="1709711903948" duration="1139000" />
       <workItem from="1709714329593" duration="884000" />
       <workItem from="1709718001052" duration="3344000" />
+      <workItem from="1709740777205" duration="678000" />
+      <workItem from="1709800956787" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="добавлены новые методы">
       <option name="closed" value="true" />
@@ -218,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709720823913</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="понижен уровень логгирования">
+      <option name="closed" value="true" />
+      <created>1709740838978</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1709740838978</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +258,7 @@
     <MESSAGE value="добавлены новые перегрузки для методов создания attrs и query" />
     <MESSAGE value="обновлен модуль" />
     <MESSAGE value="добавлены перегрузки с классе Connector" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлены перегрузки с классе Connector" />
+    <MESSAGE value="понижен уровень логгирования" />
+    <option name="LAST_COMMIT_MESSAGE" value="понижен уровень логгирования" />
   </component>
 </project>

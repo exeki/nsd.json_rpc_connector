@@ -340,16 +340,7 @@ public class RpcUtilities {
         return new Attrs();
     }
 
-    public Attrs attrs(String key, String value) {
-        return new Attrs(key, value);
-    }
-    public Attrs attrs(String key, Number value) {
-        return new Attrs(key, value);
-    }
-    public Attrs attrs(String key, Boolean value) {
-        return new Attrs(key, value);
-    }
-    public Attrs attrs(String key, Date value) {
+    public Attrs attrs(String key, Object value) {
         return new Attrs(key, value);
     }
 
@@ -362,19 +353,7 @@ public class RpcUtilities {
         return new Query();
     }
 
-    public Query query(String key, String value) {
-        return new Query(key, value);
-    }
-    public Query query(String key, Number value) {
-        return new Query(key, value);
-    }
-    public Query query(String key, Boolean value) {
-        return new Query(key, value);
-    }
-    public Query query(String key, Condition value) {
-        return new Query(key, value);
-    }
-    public Query query(String key, Date value) {
+    public Query query(String key, Object value) {
         return new Query(key, value);
     }
 

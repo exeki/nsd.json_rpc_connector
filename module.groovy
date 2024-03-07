@@ -20,41 +20,15 @@ public class Attrs {
 
     public Attrs() {}
 
-    public Attrs(String key, String value) {
+    public Attrs(String key, Object value) {
         map.put(key, value);
     }
 
-    public Attrs(String key, Number value) {
-        map.put(key, value);
-    }
-
-    public Attrs(String key, Boolean value) {
-        map.put(key, value);
-    }
-
-    public Attrs(String key, Date value) {
-        map.put(key, value);
-    }
-
-    public Attrs put(String key, String value) {
+    public Attrs put(String key, Object value) {
         map.put(key, value);
         return this;
     }
 
-    public Attrs put(String key, Number value) {
-        map.put(key, value);
-        return this;
-    }
-
-    public Attrs put(String key, Boolean value) {
-        map.put(key, value);
-        return this;
-    }
-
-    public Attrs put(String key, Date value) {
-        map.put(key, value);
-        return this;
-    }
 }
 
 /**
@@ -389,50 +363,15 @@ public class Query {
 
     public Query() {}
 
-    public Query(String key, String value) {
+    public Query(String key, Object value) {
         map.put(key, value);
     }
 
-    public Query(String key, Number value) {
-        map.put(key, value);
-    }
-
-    public Query(String key, Boolean value) {
-        map.put(key, value);
-    }
-
-    public Query(String key, Condition value) {
-        map.put(key, value);
-    }
-
-    public Query(String key, Date value) {
-        map.put(key, value);
-    }
-
-    public Query put(String key, String value) {
+    public Query put(String key, Object value) {
         map.put(key, value);
         return this;
     }
 
-    public Query put(String key, Number value) {
-        map.put(key, value);
-        return this;
-    }
-
-    public Query put(String key, Boolean value) {
-        map.put(key, value);
-        return this;
-    }
-
-    public Query put(String key, Condition value) {
-        map.put(key, value);
-        return this;
-    }
-
-    public Query put(String key, Date value) {
-        map.put(key, value);
-        return this;
-    }
 }
 
 /**
@@ -1104,21 +1043,10 @@ public class RpcUtilities {
         return new Attrs();
     }
 
-    public Attrs attrs(String key, String value) {
+    public Attrs attrs(String key, Object value) {
         return new Attrs(key, value);
     }
 
-    public Attrs attrs(String key, Number value) {
-        return new Attrs(key, value);
-    }
-
-    public Attrs attrs(String key, Boolean value) {
-        return new Attrs(key, value);
-    }
-
-    public Attrs attrs(String key, Date value) {
-        return new Attrs(key, value);
-    }
 
     /**
      * Создать новаый эжкземпляр query
@@ -1129,24 +1057,9 @@ public class RpcUtilities {
         return new Query();
     }
 
-    public Query query(String key, String value) {
+    public Query query(String key, Object value) {
         return new Query(key, value);
     }
 
-    public Query query(String key, Number value) {
-        return new Query(key, value);
-    }
-
-    public Query query(String key, Boolean value) {
-        return new Query(key, value);
-    }
-
-    public Query query(String key, Condition value) {
-        return new Query(key, value);
-    }
-
-    public Query query(String key, Date value) {
-        return new Query(key, value);
-    }
 
 }
