@@ -33,7 +33,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/exeki/nsd.basic_api_connector")
+            url = uri("https://maven.pkg.github.com/exeki/nsd.json_rpc_connector")
             credentials {
                 username = System.getenv("GITHUB_USERNAME")
                 password = System.getenv("GITHUB_TOKEN")
