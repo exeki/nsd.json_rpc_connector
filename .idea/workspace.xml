@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/module.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Attrs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Attrs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcUtilities.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,29 @@
       <recent name="C:\projects\nds\projects\standalone\json_rpc_connector" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.json_rpc_connector [build]">
+    <configuration name="json_rpc_connector [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <configuration name="json_rpc_connector [publish]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -127,6 +146,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.json_rpc_connector [build]" />
         <item itemvalue="Gradle.json_rpc_connector [publish]" />
       </list>
     </recent_temporary>
@@ -150,7 +170,8 @@
       <workItem from="1709714329593" duration="884000" />
       <workItem from="1709718001052" duration="3344000" />
       <workItem from="1709740777205" duration="678000" />
-      <workItem from="1709800956787" duration="601000" />
+      <workItem from="1709800956787" duration="1869000" />
+      <workItem from="1710155217041" duration="339000" />
     </task>
     <task id="LOCAL-00001" summary="добавлены новые методы">
       <option name="closed" value="true" />
@@ -232,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709740838978</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="В методах по сбору Query и Attrs переделаны сигнатуры принимаемых параметров - теперь везде принимается только String и Object">
+      <option name="closed" value="true" />
+      <created>1709801637446</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709801637446</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +288,7 @@
     <MESSAGE value="обновлен модуль" />
     <MESSAGE value="добавлены перегрузки с классе Connector" />
     <MESSAGE value="понижен уровень логгирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="понижен уровень логгирования" />
+    <MESSAGE value="В методах по сбору Query и Attrs переделаны сигнатуры принимаемых параметров - теперь везде принимается только String и Object" />
+    <option name="LAST_COMMIT_MESSAGE" value="В методах по сбору Query и Attrs переделаны сигнатуры принимаемых параметров - теперь везде принимается только String и Object" />
   </component>
 </project>

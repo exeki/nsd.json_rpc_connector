@@ -2,7 +2,6 @@ package ru.kazantsev.nsd.json_rpc_connector;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Date;
 import java.util.HashMap;
 
 /**

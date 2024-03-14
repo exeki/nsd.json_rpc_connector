@@ -16,8 +16,13 @@ java {
 
 repositories {
     mavenCentral()
-    mavenLocal()
-}
+    maven {
+        url = uri("https://maven.pkg.github.com/exeki/*")
+        credentials {
+            username = System.getenv("GITHUB_USERNAME")
+            password = System.getenv("GITHUB_TOKEN")
+        }
+    }}
 
 publishing {
     publications {
@@ -26,7 +31,14 @@ publishing {
         }
     }
     repositories {
-        mavenLocal()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/exeki/nsd.basic_api_connector")
+            credentials {
+                username = System.getenv("GITHUB_USERNAME")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
 }
 
