@@ -22,7 +22,8 @@ repositories {
             username = System.getenv("GITHUB_USERNAME")
             password = System.getenv("GITHUB_TOKEN")
         }
-    }}
+    }
+}
 
 publishing {
     publications {
@@ -43,8 +44,7 @@ publishing {
 }
 
 dependencies {
-    api("ru.kazantsev.nsd:basic_api_connector:1.0.0")
-    // https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all
+    api("ru.kazantsev.nsd:basic_api_connector:1.0.4")
     testImplementation("org.codehaus.groovy:groovy-all:3.0.19")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
