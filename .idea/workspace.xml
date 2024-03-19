@@ -177,6 +177,7 @@
       <workItem from="1710155217041" duration="339000" />
       <workItem from="1710414052694" duration="2322000" />
       <workItem from="1710703316130" duration="924000" />
+      <workItem from="1710791566884" duration="909000" />
     </task>
     <task id="LOCAL-00001" summary="добавлены новые методы">
       <option name="closed" value="true" />
@@ -290,7 +291,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710415909612</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="повышена версия базового коннектора">
+      <option name="closed" value="true" />
+      <created>1710791687095</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1710791687095</updated>
+    </task>
+    <task id="LOCAL-00016" summary="повышена версия базового коннектора">
+      <option name="closed" value="true" />
+      <created>1710791863952</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1710791863952</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +336,7 @@
     <MESSAGE value="понижен уровень логгирования" />
     <MESSAGE value="В методах по сбору Query и Attrs переделаны сигнатуры принимаемых параметров - теперь везде принимается только String и Object" />
     <MESSAGE value="добавлена сборка" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлена сборка" />
+    <MESSAGE value="повышена версия базового коннектора" />
+    <option name="LAST_COMMIT_MESSAGE" value="повышена версия базового коннектора" />
   </component>
 </project>
