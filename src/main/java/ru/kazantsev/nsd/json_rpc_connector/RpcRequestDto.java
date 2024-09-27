@@ -16,7 +16,7 @@ public abstract class RpcRequestDto {
     /**
      * Абстракция, содержит повторяющиеся поля/методы
      */
-    protected static abstract class Abstract {
+    public static abstract class Abstract {
         protected static final String JSON_RPC_VERSION_CONST = "2.0";
         protected String jsonRpcVersion;
         protected Long id;

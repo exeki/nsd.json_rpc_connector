@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcRequestDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +29,17 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="json_rpc_connector" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="json_rpc_connector" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="json_rpc_connector" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -164,7 +174,7 @@
       <workItem from="1710791566884" duration="909000" />
       <workItem from="1710847711546" duration="281000" />
       <workItem from="1713536209682" duration="1209000" />
-      <workItem from="1727447022463" duration="58000" />
+      <workItem from="1727447022463" duration="857000" />
     </task>
     <task id="LOCAL-00001" summary="добавлены новые методы">
       <option name="closed" value="true" />
@@ -302,7 +312,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710847789965</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="добавил кастомный метод editWithoutEventActions">
+      <option name="closed" value="true" />
+      <created>1727447253181</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1727447253181</updated>
+    </task>
+    <task id="LOCAL-00019" summary="повысил версию">
+      <option name="closed" value="true" />
+      <created>1727447282699</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1727447282699</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +358,8 @@
     <MESSAGE value="В методах по сбору Query и Attrs переделаны сигнатуры принимаемых параметров - теперь везде принимается только String и Object" />
     <MESSAGE value="добавлена сборка" />
     <MESSAGE value="повышена версия базового коннектора" />
-    <option name="LAST_COMMIT_MESSAGE" value="повышена версия базового коннектора" />
+    <MESSAGE value="добавил кастомный метод editWithoutEventActions" />
+    <MESSAGE value="повысил версию" />
+    <option name="LAST_COMMIT_MESSAGE" value="повысил версию" />
   </component>
 </project>

@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "ru.kazantsev.nsd"
-version = "1.1"
+version = "1.1.1"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
