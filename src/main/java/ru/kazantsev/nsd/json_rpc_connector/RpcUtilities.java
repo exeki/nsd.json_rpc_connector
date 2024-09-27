@@ -332,6 +332,30 @@ public class RpcUtilities {
     }
 
     /**
+     * Создать dto для отправки запроса методом editWithoutEventAction.
+     * ВНИМАНИЕ: этого метода нет в штатном модуле jsonRpc
+     *
+     * @param fqn   код метокласса искомого для редактирования объекта
+     * @param query ассоциативный массив содержащий параметры поиска редактируемого объекта
+     * @param attrs ассоциативный массив содержащий параметры для редактирования
+     * @return dto для отправки запроса методом edit
+     */
+    public RpcRequestDto.EditWithoutEventActions editWithoutEventActions(String fqn, Query query, Attrs attrs) {
+        return new RpcRequestDto.EditWithoutEventActions(fqn, query, attrs);
+    }
+
+    /**
+     * Создать dto для отправки запроса методом editWithoutEventAction.
+     * ВНИМАНИЕ: этого метода нет в штатном модуле jsonRpc
+     *
+     * @param uuid  идентификатор редактируемого объекта
+     * @param attrs ассоциативный массив содержащий параметры для редактирования
+     * @return dto для отправки запроса методом edit
+     */
+    public RpcRequestDto.EditWithoutEventActions editWithoutEventActions(String uuid, Attrs attrs) {
+        return new RpcRequestDto.EditWithoutEventActions(uuid, attrs);
+    }
+    /**
      * Создать новаый эжкземпляр attrs
      *
      * @return новаый эжкземпляр attrs

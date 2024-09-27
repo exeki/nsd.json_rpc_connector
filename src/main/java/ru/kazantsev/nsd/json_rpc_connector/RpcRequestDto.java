@@ -24,6 +24,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Установить id запроса
+         *
          * @param id идентификатор
          */
         public void setId(Long id) {
@@ -32,6 +33,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Установить возвращаемые атрибуты
+         *
          * @param attrs возвращаемые атрибуты
          */
         public void setView(List<String> attrs) {
@@ -40,6 +42,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Получить используемую версию json rpc (константно 2.0)
+         *
          * @return версия json rpc
          */
         String getJsonRpcVersion() {
@@ -48,6 +51,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Получить id запрос
+         *
          * @return id запроса
          */
         Long getId() {
@@ -56,6 +60,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Получить перечень возвращаемых атрибутов
+         *
          * @return перечень возвращаемых атриубтов
          */
         List<String> getView() {
@@ -64,6 +69,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Метод для подготовки к сериализации
+         *
          * @return подготолвенная к сериализации Map
          */
         @JsonValue
@@ -84,7 +90,7 @@ public abstract class RpcRequestDto {
         Query query;
 
         /**
-         * @param fqn код метокласса искомого объекта
+         * @param fqn   код метокласса искомого объекта
          * @param query ассоциативный массив для поиска объекта
          */
         public Get(String fqn, Query query) {
@@ -94,6 +100,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Получить код метокласса искомого объекта
+         *
          * @return код метокласса искомого объекта
          */
         public String getFqn() {
@@ -102,6 +109,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Получить ассоциативный массив для поиска объекта
+         *
          * @return ассоциативный массив для поиска объекта
          */
         public Query getQuery() {
@@ -110,6 +118,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Метод для подготовки к сериализации
+         *
          * @return подготолвенная к сериализации Map
          */
         @Override
@@ -141,7 +150,7 @@ public abstract class RpcRequestDto {
         Long offset;
 
         /**
-         * @param fqn код метокласса искомого объекта
+         * @param fqn   код метокласса искомого объекта
          * @param query ассоциативный массив для поиска объекта
          */
         public Find(String fqn, Query query) {
@@ -150,6 +159,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Получить лимит возвращаемых объектов
+         *
          * @return лимит возвращаемых объектов
          */
         public Long getLimit() {
@@ -158,6 +168,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Установить лимит возвращаемых объектов
+         *
          * @param limit лимит возвращаемых объектов
          */
         public void setLimit(Long limit) {
@@ -166,6 +177,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Получить оффсет при поиске объектов
+         *
          * @return оффсет при поиске объектов
          */
         public Long getOffset() {
@@ -174,6 +186,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Установить оффсет при поиске объектов
+         *
          * @param offset оффсет при поиске объектов
          */
         public void setOffset(Long offset) {
@@ -182,6 +195,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Метод для подготовки к сериализации
+         *
          * @return подготолвенная к сериализации Map
          */
         @Override
@@ -215,7 +229,7 @@ public abstract class RpcRequestDto {
         Attrs attrs;
 
         /**
-         * @param fqn код метакласса создаваемого объекта
+         * @param fqn   код метакласса создаваемого объекта
          * @param attrs ассоциативный массив с атрибутами создаваемого объекта
          */
         public Create(String fqn, Attrs attrs) {
@@ -225,6 +239,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Получить код метакласса создаваемого объекта
+         *
          * @return код метакласса создаваемого объекта
          */
         public String getFqn() {
@@ -233,6 +248,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Получить ассоциативный массив с атрибутами создаваемого объекта
+         *
          * @return ассоциативный массив с атрибутами создаваемого объекта
          */
         public Attrs getAttrs() {
@@ -241,6 +257,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Метод для подготовки к сериализации
+         *
          * @return подготолвенная к сериализации Map
          */
         @Override
@@ -280,7 +297,7 @@ public abstract class RpcRequestDto {
         protected Attrs attrs;
 
         /**
-         * @param fqn код метокласса искомого для редактирования объекта
+         * @param fqn   код метокласса искомого для редактирования объекта
          * @param query ассоциативный массив содержащий параметры поиска редактируемого объекта
          * @param attrs ассоциативный массив содержащий параметры для редактирования
          */
@@ -291,7 +308,7 @@ public abstract class RpcRequestDto {
         }
 
         /**
-         * @param uuid идентификатор редактируемого объекта
+         * @param uuid  идентификатор редактируемого объекта
          * @param attrs ассоциативный массив содержащий параметры для редактирования
          */
         public Edit(String uuid, Attrs attrs) {
@@ -301,6 +318,7 @@ public abstract class RpcRequestDto {
 
         /**
          * Метод для подготовки к сериализации
+         *
          * @return подготолвенная к сериализации Map
          */
         @Override
@@ -314,6 +332,53 @@ public abstract class RpcRequestDto {
             HashMap<String, Object> dto = new HashMap<>();
             dto.put("jsonrpc", JSON_RPC_VERSION_CONST);
             dto.put("method", "edit");
+            dto.put("id", id);
+            dto.put("params", params);
+            return dto;
+        }
+    }
+
+    /**
+     * DTO для выполнения запроса методом editWithoutEventActions
+     * ВНИМАНИЕ: этого метода нет в штатном модуле jsonRpc
+     */
+    public static class EditWithoutEventActions extends Edit {
+
+        /**
+         * ВНИМАНИЕ: этого метода нет в штатном модуле jsonRpc
+         * @param fqn   код метокласса искомого для редактирования объекта
+         * @param query ассоциативный массив содержащий параметры поиска редактируемого объекта
+         * @param attrs ассоциативный массив содержащий параметры для редактирования
+         */
+        public EditWithoutEventActions(String fqn, Query query, Attrs attrs) {
+            super(fqn, query, attrs);
+        }
+
+        /**
+         * ВНИМАНИЕ: этого метода нет в штатном модуле jsonRpc
+         * @param uuid  идентификатор редактируемого объекта
+         * @param attrs ассоциативный массив содержащий параметры для редактирования
+         */
+        public EditWithoutEventActions(String uuid, Attrs attrs) {
+            super(uuid, attrs);
+        }
+
+        /**
+         * Метод для подготовки к сериализации
+         *
+         * @return подготолвенная к сериализации Map
+         */
+        @Override
+        public Map<String, Object> getJsonValue() {
+            HashMap<String, Object> params = new HashMap<>();
+            params.put("uuid", uuid);
+            params.put("fqn", fqn);
+            params.put("query", query);
+            params.put("attrs", attrs);
+            params.put("view", view);
+            HashMap<String, Object> dto = new HashMap<>();
+            dto.put("jsonrpc", JSON_RPC_VERSION_CONST);
+            dto.put("method", "editWithoutEventActions");
             dto.put("id", id);
             dto.put("params", params);
             return dto;
