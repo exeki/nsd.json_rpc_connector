@@ -4,27 +4,30 @@
 Предоставляет полный функционал модуля, который можно использовать разными способами. 
 Библиотека основана на библиотеке [nsd.basic_api_connector](https://github.com/exeki/nsd.basic_api_connector) и использует ее как зависимость.
 
+В версии 1.2 библиотека была сильно упрощена, но так же были убраны некоторые варианты взаимодействия с ней. 
+
 # Как это работает:
 
 Как и в случае с nsd.basic_api_connector, входным классом является Connector (ru.kazantsev.nsd.json_rpc_connector.Connector).
 Можно использовать заранее подготовленные методы get, find, create, edit, либо подготовить один или несколько DTO RpcRequestDto и отправить
 их методом sendRequest.
 
-Так же в модуле есть утилитарый класс RpcUtilities, который содержит методы для создания DTO RpcRequestDto и условных операций.
+Так же в модуле есть утилитарный класс [ConditionUtilities.java](src%2Fmain%2Fjava%2Fru%2Fkazantsev%2Fnsd%2Fjson_rpc_connector%2FConditionUtilities.java), который содержит методы для создания условных операций.
 
 # Примеры:
 
-### Создания
+### Создание
 
 В данном примере отправка запроса проиходит с предварительным созданием DTO. DTO создается при помощи конструктора. 
 Это же действие можно было выполнить при помощи метода Connector.jsonRpcCreate().
 
 ```groovy
+package tests.requests.create
+
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import ru.kazantsev.nsd.basic_api_connector.ConnectorParams
-import ru.kazantsev.nsd.json_rpc_connector.Attrs
 import ru.kazantsev.nsd.json_rpc_connector.Connector
 import ru.kazantsev.nsd.json_rpc_connector.RpcRequestDto
 import ru.kazantsev.nsd.json_rpc_connector.RpcResponseDto
@@ -34,18 +37,18 @@ Logger logger = LoggerFactory.getLogger("CREATE TEST")
 //Создается ассотиативный массив для редактирования,
 //содержий в ключах коды атрибутов,
 //в значениях значения атрибутов создаваемого объекта
-Attrs attrs = new Attrs()
-        .put("clientName", "Казанцев Егор")
-        .put("clientEmail", "myemail@somedomain.com")
-        .put("clientPhone", "8(800)555-35-35")
-        .put("service", 'slmService$23495801')
-        .put("agreement", 'agreement$12435404')
-        .put("shortDescr", "Какая то тема")
-        .put("descriptionRTF", "бр<br>бр")
+HashMap attrs = new HashMap()
+attrs.put("clientName", "Казанцев Егор")
+attrs.put("clientEmail", "myemail@somedomain.com")
+attrs.put("clientPhone", "8(800)555-35-35")
+attrs.put("service", 'slmService$23495801')
+attrs.put("agreement", 'agreement$12435404')
+attrs.put("shortDescr", "Какая то тема")
+attrs.put("descriptionRTF", "бр<br>бр")
 
 //Создается новый коннектор
 Connector connector = new Connector(ConnectorParams.byConfigFile("DSO_TEST"))
-//Создается DTO метода create для последующей отправки 
+//Создается DTO метода create для последующей отправки
 RpcRequestDto.Create dto = new RpcRequestDto.Create('serviceCall$vnINC', attrs)
 //Запрос отправляется с ранее созданным DTO
 RpcResponseDto result = connector.sendRequest(dto)
@@ -59,31 +62,30 @@ logger.info(new ObjectMapper().writeValueAsString(result))
 Это же действие можно было выполнить при помощи предваритального создания DTO.
 
 ```groovy
+package tests.requests.edit
+
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import ru.kazantsev.nsd.basic_api_connector.ConnectorParams
-import ru.kazantsev.nsd.json_rpc_connector.Attrs
+import ru.kazantsev.nsd.json_rpc_connector.Condition
 import ru.kazantsev.nsd.json_rpc_connector.Connector
-import ru.kazantsev.nsd.json_rpc_connector.Query
 import ru.kazantsev.nsd.json_rpc_connector.RpcResponseDto
-import ru.kazantsev.nsd.json_rpc_connector.RpcUtilities
+import ru.kazantsev.nsd.json_rpc_connector.ConditionUtilities
 
 Logger logger = LoggerFactory.getLogger("CREATE TEST")
-
-//Создается экземпляр утилитарного класса
-RpcUtilities rpcUt = RpcUtilities.getInstance()
 
 //Создается ассотиативный массив для редактирования,
 //содержий в ключах коды атрибутов,
 //в значениях значения атрибутов создаваемого объекта
-Attrs attrs = rpcUt.attrs()
-        .put("shortDescr", "123131sdfsdfsdfsdfsf23123")
-        .put("descriptionRTF", "3213123asfasfwsdefs123123")
+HashMap attrs = new HashMap()
+attrs.put("shortDescr", "123131sdfsdfsdfsdfsf23123")
+attrs.put("descriptionRTF", "3213123asfasfwsdefs123123")
 
 //Создается поисковый массив при помощи утилитарного класса,
 //в него добавляется условие соответствия, которое так же создается при помощи утилитарного класса
-Query query = rpcUt.query().put("UUID", rpcUt.eq('serviceCall$59374017'))
+HashMap query = new HashMap()
+query.put("UUID", new Condition.Eq('serviceCall$59374017'))
 
 //Создается новый коннектор
 Connector connector = new Connector(ConnectorParams.byConfigFile("DSO_TEST"))
@@ -104,40 +106,40 @@ logger.info(new ObjectMapper().writeValueAsString(result))
 Создается несколько DTO с разными методами и отправляется в одном запросе.
 
 ```groovy
+package tests.requests.multi
+
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import ru.kazantsev.nsd.basic_api_connector.ConnectorParams
-import ru.kazantsev.nsd.json_rpc_connector.Attrs
 import ru.kazantsev.nsd.json_rpc_connector.Connector
-import ru.kazantsev.nsd.json_rpc_connector.Query
 import ru.kazantsev.nsd.json_rpc_connector.RpcRequestDto
 import ru.kazantsev.nsd.json_rpc_connector.RpcResponseDto
-import ru.kazantsev.nsd.json_rpc_connector.RpcUtilities
+import ru.kazantsev.nsd.json_rpc_connector.ConditionUtilities
 
 Logger logger = LoggerFactory.getLogger("CREATE TEST")
-RpcUtilities rpcUt = RpcUtilities.getInstance()
+ConditionUtilities rpcUt = ConditionUtilities.getInstance()
 
 //Создается новый коннектор
 Connector connector = new Connector(ConnectorParams.byConfigFile("DSO_TEST"))
 
 //DTO для метода get
-RpcRequestDto.Get get = rpcUt.get("employee", new Query().put("UUID", rpcUt.eq('employee$12192601')))
+RpcRequestDto.Get get = new RpcRequestDto.Get("employee", ["UUID": rpcUt.eq('employee$12192601')])
 get.setId(1)
 
 //DTO для метода find
-RpcRequestDto.Find find = rpcUt.find("employee", new Query().put("title", rpcUt.like("%Буров%")))
+RpcRequestDto.Find find = new RpcRequestDto.Find("employee", ["title": rpcUt.like("%Буров%")])
 find.setId(2)
 find.setView(['UUID', 'title'])
 
-Attrs attrs = new Attrs()
-        .put("clientName", "Казанцев Егор")
-        .put("clientEmail", "myemail@somedomain.com")
-        .put("clientPhone", "8(800)555-35-35")
-        .put("service", 'slmService$23495801')
-        .put("agreement", 'agreement$12435404')
-        .put("shortDescr", "Какая то тема")
-        .put("descriptionRTF", "бр<br>бр")
+HashMap attrs = new HashMap()
+attrs.put("clientName", "Казанцев Егор")
+attrs.put("clientEmail", "myemail@somedomain.com")
+attrs.put("clientPhone", "8(800)555-35-35")
+attrs.put("service", 'slmService$23495801')
+attrs.put("agreement", 'agreement$12435404')
+attrs.put("shortDescr", "Какая то тема")
+attrs.put("descriptionRTF", "бр<br>бр")
 
 //DTO для метода create
 RpcRequestDto.Create create = new RpcRequestDto.Create('serviceCall$vnINC', attrs)
@@ -156,20 +158,21 @@ logger.info(new ObjectMapper().writeValueAsString(result))
 В запросе задается limit и offset.
 
 ```groovy
+package tests.requests.find
+
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import ru.kazantsev.nsd.basic_api_connector.ConnectorParams
 import ru.kazantsev.nsd.json_rpc_connector.Condition
 import ru.kazantsev.nsd.json_rpc_connector.Connector
-import ru.kazantsev.nsd.json_rpc_connector.Query
 import ru.kazantsev.nsd.json_rpc_connector.RpcRequestDto
 import ru.kazantsev.nsd.json_rpc_connector.RpcResponseDto
 
 Logger logger = LoggerFactory.getLogger("CREATE TEST")
 Connector connector = new Connector(ConnectorParams.byConfigFile("DSO_TEST"))
 
-Query query = new Query().put("number", new Condition.Between(400, 1200))
+HashMap query = ["number" : new Condition.Between(400, 1200)]
 RpcRequestDto.Find dto = new RpcRequestDto.Find("serviceCall", query)
 dto.setId(321123)
 dto.setLimit(300)

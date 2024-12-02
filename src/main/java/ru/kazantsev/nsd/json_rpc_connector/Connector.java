@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Коннектор, содержащий в себе методы для обращения к
@@ -88,18 +89,18 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
      * либо в ключе error будет описание произошедшей ошибки.
      * ВАЖНО: случится ошибка, если по переданному query было найдено несколько объектов.
      */
-    public RpcResponseDto jsonRpcGet(String fqn, Query query, List<String> view, Long id) {
+    public RpcResponseDto jsonRpcGet(String fqn, Map<String, Object> query, List<String> view, Long id) {
         RpcRequestDto.Get dto = new RpcRequestDto.Get(fqn, query);
         dto.setId(id);
         dto.setView(view);
         return sendRequest(dto);
     }
 
-    public RpcResponseDto jsonRpcGet(String fqn, Query query, List<String> view) {
+    public RpcResponseDto jsonRpcGet(String fqn, Map<String, Object> query, List<String> view) {
         return jsonRpcGet(fqn, query, view, null);
     }
 
-    public RpcResponseDto jsonRpcGet(String fqn, Query query) {
+    public RpcResponseDto jsonRpcGet(String fqn, Map<String, Object> query) {
         return jsonRpcGet(fqn, query, null, null);
     }
 
@@ -119,7 +120,7 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
      * либо null, если ничего не было найдено,
      * либо в ключе error будет описание произошедшей ошибки.
      */
-    public RpcResponseDto jsonRpcFind(String fqn, Query query, List<String> view, Long limit, Long offset, Long id) {
+    public RpcResponseDto jsonRpcFind(String fqn, Map<String, Object> query, List<String> view, Long limit, Long offset, Long id) {
         RpcRequestDto.Find dto = new RpcRequestDto.Find(fqn, query);
         dto.setId(id);
         dto.setView(view);
@@ -128,19 +129,19 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
         return sendRequest(dto);
     }
 
-    public RpcResponseDto jsonRpcFind(String fqn, Query query, List<String> view, Long limit, Long offset) {
+    public RpcResponseDto jsonRpcFind(String fqn, Map<String, Object> query, List<String> view, Long limit, Long offset) {
         return jsonRpcFind(fqn, query, view, limit, offset, null);
     }
 
-    public RpcResponseDto jsonRpcFind(String fqn, Query query, List<String> view, Long limit) {
+    public RpcResponseDto jsonRpcFind(String fqn, Map<String, Object> query, List<String> view, Long limit) {
         return jsonRpcFind(fqn, query, view, limit, null, null);
     }
 
-    public RpcResponseDto jsonRpcFind(String fqn, Query query, List<String> view) {
+    public RpcResponseDto jsonRpcFind(String fqn, Map<String, Object> query, List<String> view) {
         return jsonRpcFind(fqn, query, view, null, null, null);
     }
 
-    public RpcResponseDto jsonRpcFind(String fqn, Query query) {
+    public RpcResponseDto jsonRpcFind(String fqn, Map<String, Object> query) {
         return jsonRpcFind(fqn, query, null, null, null, null);
     }
 
@@ -156,18 +157,18 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
      * либо Map с полями созданного объекта, если объект был создан и view был не null.
      * либо в ключе error будет описание произошедшей ошибки.
      */
-    public RpcResponseDto jsonRpcCreate(String fqn, Attrs attrs, List<String> view, Long id) {
+    public RpcResponseDto jsonRpcCreate(String fqn, Map<String, Object> attrs, List<String> view, Long id) {
         RpcRequestDto.Create dto = new RpcRequestDto.Create(fqn, attrs);
         dto.setId(id);
         dto.setView(view);
         return sendRequest(dto);
     }
 
-    public RpcResponseDto jsonRpcCreate(String fqn, Attrs attrs, List<String> view) {
+    public RpcResponseDto jsonRpcCreate(String fqn, Map<String, Object> attrs, List<String> view) {
         return jsonRpcCreate(fqn, attrs, view, null);
     }
 
-    public RpcResponseDto jsonRpcCreate(String fqn, Attrs attrs) {
+    public RpcResponseDto jsonRpcCreate(String fqn, Map<String, Object> attrs) {
         return jsonRpcCreate(fqn, attrs, null, null);
     }
 
@@ -184,19 +185,19 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
      * либо Map с полями отредактированного объекта, если объект был отредактирован и view был не null,
      * либо в ключе error будет описание произошедшей ошибки.
      */
-    public RpcResponseDto jsonRpcEdit(String uuid, Attrs attrs, List<String> view, Long id) {
+    public RpcResponseDto jsonRpcEdit(String uuid, Map<String, Object> attrs, List<String> view, Long id) {
         RpcRequestDto.Edit dto = new RpcRequestDto.Edit(uuid, attrs);
         dto.setId(id);
         dto.setView(view);
         return sendRequest(dto);
     }
 
-    public RpcResponseDto jsonRpcEdit(String uuid, Attrs attrs, List<String> view) {
-        return jsonRpcEdit(uuid, attrs, view, null);
+    public RpcResponseDto jsonRpcEdit(String uuid, Map<String, Object> attrs, List<String> view) {
+        return jsonRpcEdit(uuid, attrs, null, view);
     }
 
-    public RpcResponseDto jsonRpcEdit(String uuid, Attrs attrs) {
-        return jsonRpcEdit(uuid, attrs, null, null);
+    public RpcResponseDto jsonRpcEdit(String uuid, Map<String, Object> attrs) {
+        return sendRequest(new RpcRequestDto.Edit(uuid, attrs));
     }
 
     /**
@@ -214,18 +215,18 @@ public class Connector extends ru.kazantsev.nsd.basic_api_connector.Connector {
      * либо в ключе error будет описание произошедшей ошибки.
      * ВАЖНО: случится ошибка, если по переданному query было найдено несколько объектов.
      */
-    public RpcResponseDto jsonRpcEdit(String fqn, Query query, Attrs attrs, List<String> view, Long id) {
+    public RpcResponseDto jsonRpcEdit(String fqn, Map<String, Object> query, Map<String, Object> attrs, List<String> view, Long id) {
         RpcRequestDto.Edit dto = new RpcRequestDto.Edit(fqn, query, attrs);
         dto.setView(view);
         dto.setId(id);
         return sendRequest(dto);
     }
 
-    public RpcResponseDto jsonRpcEdit(String fqn, Query query, Attrs attrs, List<String> view) {
+    public RpcResponseDto jsonRpcEdit(String fqn, Map<String, Object> query, Map<String, Object> attrs, List<String> view) {
         return jsonRpcEdit(fqn, query, attrs, view, null);
     }
 
-    public RpcResponseDto jsonRpcEdit(String fqn, Query query, Attrs attrs) {
+    public RpcResponseDto jsonRpcEdit(String fqn, Map<String, Object> query, Map<String, Object> attrs) {
         return jsonRpcEdit(fqn, query, attrs, null, null);
     }
 

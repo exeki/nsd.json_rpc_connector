@@ -2,7 +2,7 @@ package tests.requests.find
 
 import groovy.time.TimeCategory
 import ru.kazantsev.nsd.json_rpc_connector.Condition
-import ru.kazantsev.nsd.json_rpc_connector.Query
+
 import ru.kazantsev.nsd.json_rpc_connector.RpcRequestDto
 import ru.kazantsev.nsd.json_rpc_connector.RpcResponseDto
 
@@ -17,9 +17,7 @@ String[] ous = [
 ]
 RpcRequestDto.Find dto = new RpcRequestDto.Find(
         "employee",
-        new Query()
-                .put("parent", new Condition.In(ous))
-                .put("lastModifiedDate", new Condition.Gt(use(TimeCategory) { new Date() - EMPLOYEE_HOURS_DELAY.days }))
+        ["parent" : new Condition.In(ous), "lastModifiedDate" : new Condition.Gt(use(TimeCategory) { new Date() - EMPLOYEE_HOURS_DELAY.days })]
 )
 dto.setView(["UUID", "title"])
 RpcResponseDto result = connector.sendRequest(dto)

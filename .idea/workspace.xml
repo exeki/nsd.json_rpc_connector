@@ -6,6 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="b462e8b2-5fd2-445b-99a5-4573b1c236b2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Attrs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Connector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/Query.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/RpcUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kazantsev/nsd/json_rpc_connector/ConditionUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/TestUtils.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/TestUtils.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/create.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/create.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/createWuthParams.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/create/createWuthParams.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/edit.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/edit.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByMethod.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByMethod.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByQuery.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByQuery.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByQueryWithParams.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editByQueryWithParams.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editWithParams.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/edit/editWithParams.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/find.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/find.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/findIn.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/findIn.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/findWithParams.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/find/findWithParams.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/get.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/get.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/getWithParams.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/get/getWithParams.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/requests/multi/getFindCreate.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/requests/multi/getFindCreate.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/tests/serialization/dto_serialization.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/tests/serialization/dto_serialization.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +117,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\projects\nds\projects\standalone\json_rpc_connector" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.kazantsev.nsd.json_rpc_connector" />
+    </key>
   </component>
   <component name="RunManager" selected="Gradle.json_rpc_connector [build]">
     <configuration name="json_rpc_connector [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -175,6 +200,7 @@
       <workItem from="1710847711546" duration="281000" />
       <workItem from="1713536209682" duration="1209000" />
       <workItem from="1727447022463" duration="857000" />
+      <workItem from="1733145273186" duration="3207000" />
     </task>
     <task id="LOCAL-00001" summary="добавлены новые методы">
       <option name="closed" value="true" />

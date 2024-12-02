@@ -87,13 +87,13 @@ public abstract class RpcRequestDto {
         /**
          * Ассоциативный массив для поиска объекта
          */
-        Query query;
+        Map<String, Object> query;
 
         /**
          * @param fqn   код метокласса искомого объекта
          * @param query ассоциативный массив для поиска объекта
          */
-        public Get(String fqn, Query query) {
+        public Get(String fqn, Map<String, Object> query) {
             this.fqn = fqn;
             this.query = query;
         }
@@ -112,7 +112,7 @@ public abstract class RpcRequestDto {
          *
          * @return ассоциативный массив для поиска объекта
          */
-        public Query getQuery() {
+        public Map<String, Object> getQuery() {
             return query;
         }
 
@@ -153,7 +153,7 @@ public abstract class RpcRequestDto {
          * @param fqn   код метокласса искомого объекта
          * @param query ассоциативный массив для поиска объекта
          */
-        public Find(String fqn, Query query) {
+        public Find(String fqn, Map<String, Object> query) {
             super(fqn, query);
         }
 
@@ -226,13 +226,13 @@ public abstract class RpcRequestDto {
         /**
          * Ассоциативный массив с атрибутами создаваемого объекта
          */
-        Attrs attrs;
+        Map<String, Object> attrs;
 
         /**
          * @param fqn   код метакласса создаваемого объекта
          * @param attrs ассоциативный массив с атрибутами создаваемого объекта
          */
-        public Create(String fqn, Attrs attrs) {
+        public Create(String fqn, Map<String, Object> attrs) {
             this.attrs = attrs;
             this.fqn = fqn;
         }
@@ -251,7 +251,7 @@ public abstract class RpcRequestDto {
          *
          * @return ассоциативный массив с атрибутами создаваемого объекта
          */
-        public Attrs getAttrs() {
+        public Map<String, Object> getAttrs() {
             return attrs;
         }
 
@@ -286,7 +286,7 @@ public abstract class RpcRequestDto {
         /**
          * Ассоциативный массив содержащий параметры поиска редактируемого объекта
          */
-        protected Query query;
+        protected Map<String, Object> query;
         /**
          * Идентификатор редактируемого объекта
          */
@@ -294,14 +294,14 @@ public abstract class RpcRequestDto {
         /**
          * Ассоциативный массив содержащий параметры для редактирования
          */
-        protected Attrs attrs;
+        protected Map<String, Object> attrs;
 
         /**
          * @param fqn   код метокласса искомого для редактирования объекта
          * @param query ассоциативный массив содержащий параметры поиска редактируемого объекта
          * @param attrs ассоциативный массив содержащий параметры для редактирования
          */
-        public Edit(String fqn, Query query, Attrs attrs) {
+        public Edit(String fqn, Map<String, Object> query, Map<String, Object> attrs) {
             this.fqn = fqn;
             this.query = query;
             this.attrs = attrs;
@@ -311,7 +311,7 @@ public abstract class RpcRequestDto {
          * @param uuid  идентификатор редактируемого объекта
          * @param attrs ассоциативный массив содержащий параметры для редактирования
          */
-        public Edit(String uuid, Attrs attrs) {
+        public Edit(String uuid, Map<String, Object> attrs) {
             this.attrs = attrs;
             this.uuid = uuid;
         }
@@ -350,7 +350,7 @@ public abstract class RpcRequestDto {
          * @param query ассоциативный массив содержащий параметры поиска редактируемого объекта
          * @param attrs ассоциативный массив содержащий параметры для редактирования
          */
-        public EditWithoutEventActions(String fqn, Query query, Attrs attrs) {
+        public EditWithoutEventActions(String fqn, Map<String, Object> query, Map<String, Object> attrs) {
             super(fqn, query, attrs);
         }
 
@@ -359,7 +359,7 @@ public abstract class RpcRequestDto {
          * @param uuid  идентификатор редактируемого объекта
          * @param attrs ассоциативный массив содержащий параметры для редактирования
          */
-        public EditWithoutEventActions(String uuid, Attrs attrs) {
+        public EditWithoutEventActions(String uuid, Map<String, Object> attrs) {
             super(uuid, attrs);
         }
 

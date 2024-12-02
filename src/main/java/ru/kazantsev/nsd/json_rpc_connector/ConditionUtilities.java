@@ -1,28 +1,29 @@
 package ru.kazantsev.nsd.json_rpc_connector;
 
 import java.util.Date;
+import java.util.Map;
 
 /**
  * Утилитарый класс, содерщий набор статичесих методов для упрощения использования
  */
 @SuppressWarnings("unused")
-public class RpcUtilities {
+public class ConditionUtilities {
 
     /**
      * Заранее созданный экземпляр, что бы можно было поместить его в удобно названную переменную
      */
-    private static final RpcUtilities INSTANCE = new RpcUtilities();
+    private static final ConditionUtilities INSTANCE = new ConditionUtilities();
 
     /**
      * Получить заранее созданный экземпляр
      *
      * @return заранее созданный экземпляр
      */
-    public static RpcUtilities getInstance() {
+    public static ConditionUtilities getInstance() {
         return INSTANCE;
     }
 
-    RpcUtilities() {
+    ConditionUtilities() {
     }
 
     /**
@@ -273,112 +274,6 @@ public class RpcUtilities {
      */
     public Condition.Between between(Number arg1, Number arg2) {
         return new Condition.Between(arg1, arg2);
-    }
-
-    /**
-     * Создать dto для отправки запроса методом get
-     *
-     * @param fqn   код метокласса искомого объекта
-     * @param query ассоциативный массив для поиска объекта
-     * @return dto для отправки запроса методом get
-     */
-    public RpcRequestDto.Get get(String fqn, Query query) {
-        return new RpcRequestDto.Get(fqn, query);
-    }
-
-    /**
-     * Создать dto для отправки запроса методом find
-     *
-     * @param fqn   код метокласса искомого объекта
-     * @param query ассоциативный массив для поиска объекта
-     * @return dto для отправки запроса методом find
-     */
-    public RpcRequestDto.Find find(String fqn, Query query) {
-        return new RpcRequestDto.Find(fqn, query);
-    }
-
-    /**
-     * Создать dto для отправки запроса методом create
-     *
-     * @param fqn   код метакласса создаваемого объекта
-     * @param attrs ассоциативный массив с атрибутами создаваемого объекта
-     * @return dto для отправки запроса методом create
-     */
-    public RpcRequestDto.Create create(String fqn, Attrs attrs) {
-        return new RpcRequestDto.Create(fqn, attrs);
-    }
-
-    /**
-     * Создать dto для отправки запроса методом edit
-     *
-     * @param uuid  идентификатор редактируемого объекта
-     * @param attrs ассоциативный массив содержащий параметры для редактирования
-     * @return dto для отправки запроса методом edit
-     */
-    public RpcRequestDto.Edit edit(String uuid, Attrs attrs) {
-        return new RpcRequestDto.Edit(uuid, attrs);
-    }
-
-    /**
-     * Создать dto для отправки запроса методом edit
-     *
-     * @param fqn   код метокласса искомого для редактирования объекта
-     * @param query ассоциативный массив содержащий параметры поиска редактируемого объекта
-     * @param attrs ассоциативный массив содержащий параметры для редактирования
-     * @return dto для отправки запроса методом edit
-     */
-    public RpcRequestDto.Edit edit(String fqn, Query query, Attrs attrs) {
-        return new RpcRequestDto.Edit(fqn, query, attrs);
-    }
-
-    /**
-     * Создать dto для отправки запроса методом editWithoutEventAction.
-     * ВНИМАНИЕ: этого метода нет в штатном модуле jsonRpc
-     *
-     * @param fqn   код метокласса искомого для редактирования объекта
-     * @param query ассоциативный массив содержащий параметры поиска редактируемого объекта
-     * @param attrs ассоциативный массив содержащий параметры для редактирования
-     * @return dto для отправки запроса методом edit
-     */
-    public RpcRequestDto.EditWithoutEventActions editWithoutEventActions(String fqn, Query query, Attrs attrs) {
-        return new RpcRequestDto.EditWithoutEventActions(fqn, query, attrs);
-    }
-
-    /**
-     * Создать dto для отправки запроса методом editWithoutEventAction.
-     * ВНИМАНИЕ: этого метода нет в штатном модуле jsonRpc
-     *
-     * @param uuid  идентификатор редактируемого объекта
-     * @param attrs ассоциативный массив содержащий параметры для редактирования
-     * @return dto для отправки запроса методом edit
-     */
-    public RpcRequestDto.EditWithoutEventActions editWithoutEventActions(String uuid, Attrs attrs) {
-        return new RpcRequestDto.EditWithoutEventActions(uuid, attrs);
-    }
-    /**
-     * Создать новаый эжкземпляр attrs
-     *
-     * @return новаый эжкземпляр attrs
-     */
-    public Attrs attrs() {
-        return new Attrs();
-    }
-
-    public Attrs attrs(String key, Object value) {
-        return new Attrs(key, value);
-    }
-
-    /**
-     * Создать новаый эжкземпляр query
-     *
-     * @return новаый эжкземпляр query
-     */
-    public Query query() {
-        return new Query();
-    }
-
-    public Query query(String key, Object value) {
-        return new Query(key, value);
     }
 
 }

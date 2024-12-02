@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "ru.kazantsev.nsd"
-version = "1.1.1"
+version = "1.2"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -44,7 +44,7 @@ publishing {
 }
 
 dependencies {
-    api("ru.kazantsev.nsd:basic_api_connector:1.0.4")
+    api("ru.kazantsev.nsd:basic_api_connector:1.1.1")
     testImplementation("org.codehaus.groovy:groovy-all:3.0.19")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
